@@ -1,0 +1,16 @@
+Dataset Contains:
+- 551 patients (columns)
+- 49 patients dont have cancer (results are in row 2 (consider 0-based indexing))
+- 56,907 genes (rows)
+
+Information from Kaggle:
+TCGA - LUSC (Lung Cell Squamous Carcinoma) Expression Profiling by Array (Microarray) Dataset
+TCGA-LUSC is publicly available at https://portal.gdc.cancer.gov/.
+
+This data is normalized by TPM (transcripts per kilobase million) made them interpretable across the samples.
+Lung cancer is one of the deadliest cancers in the world and LUSC is the one of the most common subtype of the lung cancer.
+Lung Cell Squamous Carcinoma is some of the cancer subtype that occurs in the lungs. Histologically diagnosed easily, but in the most cases you could also detect tumors using expression profiles.
+Dataset Characteristics
+Dataset consist of 551 patients. Every patient has 56,907 different transcripts (expressed genes, see also expr. alternative splicing). This dataset is imbalanced, 49 patients diagnosed as healthy and rest of them are cancer (n=502).
+
+

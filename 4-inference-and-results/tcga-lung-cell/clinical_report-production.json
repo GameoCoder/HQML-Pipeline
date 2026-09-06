@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-09-04T18:54:21Z",
+  "primary_diagnosis": {
+    "label": "Normal",
+    "actual_ground_truth": "Normal",
+    "binary_class": 0,
+    "confidence_percentage": 62.45,
+    "quantum_expectation_value": -0.603
+  },
+  "quantum_model_metrics": {
+    "id": "vqc_14q",
+    "latency_ms": 179.1,
+    "qubits_used": 14,
+    "circuit_depth": 4
+  }
+}

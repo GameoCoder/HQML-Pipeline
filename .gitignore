@@ -1,0 +1,3 @@
+venv/*
+2-data-processing/venv/*
+__pychache__/*

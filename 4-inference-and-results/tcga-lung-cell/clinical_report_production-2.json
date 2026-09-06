@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-09-04T18:38:45Z",
+  "primary_diagnosis": {
+    "label": "Tumor",
+    "actual_ground_truth": "Tumor",
+    "binary_class": 1,
+    "confidence_percentage": 94.57,
+    "quantum_expectation_value": 0.694
+  },
+  "quantum_model_metrics": {
+    "id": "vqc_14q",
+    "latency_ms": 361.9,
+    "qubits_used": 14,
+    "circuit_depth": 4
+  }
+}
