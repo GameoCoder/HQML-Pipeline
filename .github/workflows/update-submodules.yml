@@ -1,0 +1,37 @@
+name: Update Submodules on Trigger
+
+on:
+  repository_dispatch:
+    types: [submodule_updated]
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout parent repository
+        uses: actions/checkout@v4
+        with:
+          submodules: 'recursive'
+          token: ${{ secrets.MAIN_REPO_UPDATE_TOKEN }} 
+
+      - name: Update submodules
+        run: |
+          git submodule update --remote --recursive --init
+
+      - name: Commit and push updates
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@://github.com"
+          
+          git add .
+          
+          if ! git diff-index --quiet HEAD; then
+            git commit -m "chore: automated submodule update from dispatch"
+            git push origin HEAD:main
+          else
+            echo "No submodule updates found."
+          fi
