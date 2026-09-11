@@ -1,20 +1,17 @@
-name: Trigger Main Repo Update
+name: Notify Parent Repo
 
 on:
   push:
     branches:
-      - main # Change to master if needed
+      - main
 
 jobs:
-  ping-main:
+  ping-parent:
     runs-on: ubuntu-latest
     steps:
-      - name: Send repository dispatch event
-        run: |
-          curl -L \
-            -X POST \
-            -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer ${{ secrets.MAIN_REPO_UPDATE_TOKEN }}" \
-            -H "X-GitHub-Api-Version: 2022-11-28" \
-            https://github.com{{ github.repository_owner }}/YOUR_MAIN_REPO_NAME/dispatches \
-            -d '{"event_type": "submodule_updated"}'
+      - name: Trigger Parent Update
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.MAIN_REPO_UPDATE_TOKEN }}
+          repository: GameoCoder/HQML-Platform
+          event-type: submodule_updated
